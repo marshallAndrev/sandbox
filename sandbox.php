@@ -1,22 +1,30 @@
 <?php
 
-	$file = 'quotes.txt';
+	class User {
 
-	$handle = fopen($file, 'a+');
+		public $email;
+		public $name;
 
-	// //read a file
-	// echo fread($handle, length);
+		public function __construct($name, $email) {
+			$this->email = $email;
+			$this->name  = $name;
+		}
 
-	// //read a single line
-	// echo fgets($handle);
+		public function login() {
+			//echo "the user logged in";
+			echo $this->name . 'logged in';
+		}
+	}
 
-	// //read single character
-	// echo fgetc($handle);
+	// $userOne = new User();
 
-	fwrite($handle, "\nDragon ball is great movie it it's end");
+	// $userOne->login();
+	// echo $userOne->email;
 
-	fclose($handle);
+	$userTwo = new User('yoshi', 'yoshi@netninja.com');
+	// echo $userTwo->name;
+	// echo $userTwo->email;
 
-	unlink($file);
+	$userTwo->login();
 
 ?>
