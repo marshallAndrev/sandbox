@@ -1,32 +1,22 @@
 <?php
 
-	// $quotes = readfile('czytaj.txt');
-	// echo $quotes;
+	$file = 'quotes.txt';
 
-	$file = 'readme.txt';
+	$handle = fopen($file, 'a+');
 
-	if (file_exists($file)) {
+	// //read a file
+	// echo fread($handle, length);
 
-		// //read file
-		// echo readfile($file) . '<br/>';
+	// //read a single line
+	// echo fgets($handle);
 
-		// //copy file
-		// copy($file, 'quotes.txt');
+	// //read single character
+	// echo fgetc($handle);
 
-		// //absolute path
-		// echo realpath($file) . '</br>';
+	fwrite($handle, "\nDragon ball is great movie it it's end");
 
-		// //file sizes
-		// echo filesize($file) . '</br>';
+	fclose($handle);
 
-		// //rename file
-		// rename($file, 'new.txt');
-
-	} else {
-		echo "file does not exist";
-	}
-
-	//make director
-	mkdir('quotes');
+	unlink($file);
 
 ?>
